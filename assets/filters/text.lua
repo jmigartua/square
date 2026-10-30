@@ -42,8 +42,10 @@ end
 local function words_in(blocks)
   local n = 0
   for _, b in ipairs(blocks) do
-    if b.t == "Div" and (b.classes:includes("note") or b.classes:includes("mother-only")) then
-      -- notes to self do not count
+    if b.t == "Div" and (b.classes:includes("note") or b.classes:includes("mother-only")
+                         or b.identifier:match("^quarto") or b.identifier:match("^title%-block")
+                         or b.classes:find_if(function(c) return c:match("^quarto") end)) then
+      -- notes to self do not count, nor the title and metadata blocks Quarto appends to the document
     elseif b.t == "Div" or b.t == "BlockQuote" then
       n = n + words_in(b.content)
     elseif b.t == "Para" or b.t == "Plain" or b.t == "Header" then
@@ -107,9 +109,10 @@ function Pandoc(doc)
   end
   local back = (lang == "es") and "volver a la mesa" or (lang == "eu") and "mahaira itzuli" or "back to the desk"
   local square = (lang == "es") and "volver a la plaza" or (lang == "eu") and "plazara itzuli" or "back to the square"
+  local write = (lang == "es") and "escribir" or (lang == "eu") and "idatzi" or "write"
   local endblock = pandoc.RawBlock("html",
     '<div class="end"><span>' .. table.concat(left, " · ") .. '</span>'
-    .. '<a href="/" class="mother-only">' .. back .. '</a>'
+    .. '<span class="mother-only"><a href="/write/' .. slug .. '" class="act">' .. write .. '</a> · <a href="/">' .. back .. '</a></span>'
     .. '<a href="/" class="sibling-only">' .. square .. '</a></div>')
 
   local blocks = pandoc.List(head)

@@ -104,6 +104,9 @@ body figcaption { font-family: var(--mono); font-size: 0.68rem; color: var(--ink
   font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft);
 }
 .end a:hover { color: var(--ink); }
+.end .act { color: var(--moss); }
+.new { font-family: var(--mono); font-size: 0.7rem; margin: -28px 0 36px; }
+.new a { color: var(--moss); }
 
 /* ---------- the desk home ---------- */
 .desk-head { margin-top: 48px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
