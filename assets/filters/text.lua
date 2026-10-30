@@ -107,6 +107,17 @@ function Pandoc(doc)
       left[#left + 1] = string.format("%d %s", n, (n == 1) and "session" or "sessions")
     end
   end
+  -- the keywords, after the facts (release 0.8.0): on the desk always; on the square unless square.yml says not
+  local kws = {}
+  if meta.keywords and not meta.hide_keywords then
+    for _, k in ipairs(meta.keywords) do kws[#kws + 1] = pandoc.utils.stringify(k) end
+  end
+  if #kws > 0 then
+    local esc = function(s) return (s:gsub("&", "&amp;"):gsub("<", "&lt;")) end
+    local kparts = {}
+    for _, k in ipairs(kws) do kparts[#kparts + 1] = "<span>" .. esc(k) .. "</span>" end
+    left[#left + 1] = '<span class="kws">' .. table.concat(kparts, " · ") .. "</span>"
+  end
   local back = (lang == "es") and "volver a la mesa" or (lang == "eu") and "mahaira itzuli" or "back to the desk"
   local square = (lang == "es") and "volver a la plaza" or (lang == "eu") and "plazara itzuli" or "back to the square"
   local write = (lang == "es") and "escribir" or (lang == "eu") and "idatzi" or "write"

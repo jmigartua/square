@@ -104,6 +104,8 @@ body figcaption { font-family: var(--mono); font-size: 0.68rem; color: var(--ink
   font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft);
 }
 .end a:hover { color: var(--ink); }
+.end .kws { color: var(--ink-faint); }
+.end .kws span { white-space: nowrap; }
 .end .act { color: var(--moss); }
 .new { font-family: var(--mono); font-size: 0.7rem; margin: -28px 0 36px; }
 .new a { color: var(--moss); }
