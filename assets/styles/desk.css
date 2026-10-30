@@ -1,0 +1,154 @@
+/* ============================================================
+   The desk — the workshop of the texts.
+   Black on white, literally. Newsreader for everything that is read,
+   IBM Plex Mono for everything that is looked up. One quiet accent
+   (moss) for the act of freeing and the freed marker. Dark mode is
+   the inverse: white on black. The square (the public sibling) will
+   reuse this file minus the desk-only rules at the end.
+   ============================================================ */
+
+/* ---------- tokens ---------- */
+:root {
+  --paper: #FCFCFA;
+  --ink: #111111;
+  --ink-soft: #6B6B66;
+  --ink-faint: #A2A29B;
+  --rule: #E4E4DF;
+  --wash: #F3F3EF;
+  --moss: #2F5D50;
+  --moss-wash: #EAF0ED;
+  --serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 62ch;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121212;
+    --ink: #ECECE6;
+    --ink-soft: #9A9A93;
+    --ink-faint: #5E5E59;
+    --rule: #2A2A28;
+    --wash: #1B1B19;
+    --moss: #7FB09E;
+    --moss-wash: #192320;
+    color-scheme: dark;
+  }
+}
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
+img { max-width: 100%; height: auto; }
+[hidden] { display: none !important; }
+.sibling-only { display: none !important; }
+
+.mono { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.02em; }
+.label { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
+
+/* ---------- Quarto chrome, quieted ---------- */
+#quarto-header, .quarto-title-banner, #quarto-margin-sidebar, #quarto-sidebar, .quarto-title-meta { display: none !important; }
+#quarto-content, main.content, .content, .page-columns, main { display: block; max-width: none; margin: 0; padding: 0; }
+
+/* ---------- header ---------- */
+.site-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 22px; }
+.site-head .wordmark { font-size: 0.95rem; color: var(--ink-soft); white-space: nowrap; }
+.site-head .wordmark:hover { color: var(--ink); text-decoration: none; }
+.site-head__where { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ---------- the column ----------
+   theme: none puts the page straight into <body>: header.site-head, header#title-block-header, then the
+   blocks. So the body itself is the reading column. */
+body { max-width: calc(var(--measure) + 2 * 24px); margin: 0 auto; padding: 0 24px 72px; }
+#title-block-header { margin-top: 48px; }
+body > p:first-of-type { margin-top: 48px; }       /* the home has no title block */
+#title-block-header ~ * { margin-top: 0; }
+#title-block-header ~ p { margin-top: 0; }
+#title-block-header ~ p:first-of-type, .dateline + p, .epigraph + p { margin-top: 0; }
+
+/* ---------- a text ---------- */
+h1.title { font-weight: 400; font-size: 1.9rem; line-height: 1.15; margin: 0 0 10px; text-wrap: balance; letter-spacing: -0.005em; }
+.dateline { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); letter-spacing: 0.03em; margin: 0 0 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+.dateline .state { color: var(--moss); }
+.dateline .sample { color: var(--ink-faint); }
+.epigraph { font-style: italic; color: var(--ink-soft); margin: 0 0 30px; }
+body > p { margin: 0 0 1.15em; }
+.dateline + p, .epigraph + p { font-size: 1.08em; }
+body h2 { font-weight: 400; font-size: 1.25rem; margin: 2em 0 0.6em; }
+body h3 { font-weight: 500; font-size: 1rem; margin: 1.6em 0 0.5em; }
+body blockquote { margin: 1.2em 0; padding-left: 1.1em; border-left: 1px solid var(--rule); color: var(--ink-soft); }
+body blockquote p { margin-bottom: 0.6em; }
+body em { font-style: italic; }
+body hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+body ul, body ol { padding-left: 1.3em; }
+body li { margin-bottom: 0.35em; }
+body code { font-family: var(--mono); font-size: 0.82em; }
+body pre { font-family: var(--mono); font-size: 0.78rem; line-height: 1.6; background: var(--wash); padding: 12px 14px; overflow-x: auto; border-radius: 3px; }
+body figure { margin: 1.6em 0; }
+body figcaption { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); margin-top: 8px; }
+.end {
+  margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft);
+}
+.end a:hover { color: var(--ink); }
+
+/* ---------- the desk home ---------- */
+.desk-head { margin-top: 48px; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+.desk-head .place { font-size: 1.35rem; font-weight: 400; margin: 0; white-space: nowrap; }
+.desk-head .today { color: var(--ink-soft); font-style: italic; }
+.shelf { display: grid; grid-template-columns: 7.5rem 1fr; gap: 10px 20px; margin-bottom: 36px; align-items: start; }
+.shelf .label { padding-top: 0.35rem; }
+.shelf ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.shelf li { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; line-height: 1.4; }
+.shelf li .t em { color: var(--ink-soft); }
+.shelf li .m { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.shelf li .m.waiting { color: var(--moss); }
+.shelf .empty { color: var(--ink-faint); font-style: italic; }
+.promise { border-top: 1px solid var(--rule); padding-top: 18px; margin-top: 8px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--ink-soft); font-size: 0.95rem; }
+.promise > span:first-child { white-space: nowrap; }
+.promise b { font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ---------- the square home ---------- */
+.square-head { margin-top: 48px; margin-bottom: 52px; }
+.square-head .place { font-size: 1.35rem; font-weight: 400; margin: 0 0 6px; }
+.square-head p { margin: 0; color: var(--ink-soft); font-style: italic; }
+.freed { list-style: none; margin: 0; padding: 0; display: grid; gap: 30px; }
+.freed li { display: grid; gap: 4px; }
+.freed .t { font-size: 1.25rem; line-height: 1.25; }
+.freed .first { color: var(--ink-soft); }
+.freed .m { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); letter-spacing: 0.03em; font-variant-numeric: tabular-nums; }
+.freed .empty { color: var(--ink-faint); font-style: italic; }
+.square-foot { margin-top: 72px; padding-top: 16px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- desk only: notes to self ---------- */
+.note {
+  background: var(--wash); border-left: 2px solid var(--rule);
+  padding: 10px 12px; margin: 1.2em 0; font-size: 0.9rem; line-height: 1.45; color: var(--ink-soft);
+}
+.note::before { content: "note to self · desk only"; display: block; font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 4px; }
+.note p { margin: 0 0 0.5em; }
+.note p:last-child { margin-bottom: 0; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  body { padding: 0 18px 48px; }
+  #title-block-header, .desk-head { margin-top: 32px; }
+  .site-head { padding-top: 18px; }
+  .shelf { grid-template-columns: 1fr; gap: 6px; }
+  .shelf li { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
