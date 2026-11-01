@@ -63,13 +63,13 @@ ul.task-list li input[type="checkbox"] {
 .dl { font-weight: 600; } .m { color: #6e6e73; font-size: .92em; } .k { font-weight: 600; margin: 1em 0 .2em; }
 table.versions { border-collapse: collapse; margin: .5em 0 1em; } table.versions td, table.versions th { text-align: left; padding: .15em 1.2em .15em 0; border-bottom: 1px solid #e5e5e5; font-size: .95em; } table.versions td.v { font-family: ui-monospace, Menlo, monospace; }
 </style>
-<p class="lede">Ispilu, "mirror" in Basque, is made by Irene Urcelay-Olabarria and Josu M. Igartua, Thermomat Research Group, University of the Basque Country (EHU), as the working face of a doctoral thesis proposal: which features of a magnetic structure a powder neutron pattern determines, which it does not, and what cuts the rest. The MAGNDATA mirror as a Mac app: the published magnetic structures, browsed and inspected on this Mac, without a server and without the network. The data is the mirror's snapshot of the Bilbao Crystallographic Server's repository, named in the status bar.</p>
+<p class="lede">Ispilu, "mirror" in Basque, is made by Irene Urcelay-Olabarria and Josu M. Igartua, Thermomat Research Group, University of the Basque Country (EHU), as the working face of a question: which features of a magnetic structure a powder neutron pattern determines, which it does not, and what cuts the rest. The MAGNDATA mirror as a Mac app: the published magnetic structures, browsed and inspected on this Mac, without a server and without the network. The data is the mirror's snapshot of the Bilbao Crystallographic Server's repository, named in the status bar.</p>
 <h2 id="download">Download</h2>
-<p><a class="dl" href="https://github.com/jmigartua/tesi-proposamena/releases/download/v0.19.0/Ispilu-0.19.0.zip">Ispilu 0.19.0 for the Mac</a> <span class="m">· zip, unsigned · the first time, right-click the app and choose Open</span></p>
+<p><a class="dl" href="https://github.com/jmigartua/tesi-proposamena/releases/download/v0.20.0/Ispilu-0.20.0.zip">Ispilu 0.20.0 for the Mac</a> <span class="m">· zip, unsigned · the first time, right-click the app and choose Open</span></p>
 <p class="m">The download is a release of a private repository: it asks for a GitHub account that has been given access. All releases: <a href="https://github.com/jmigartua/tesi-proposamena/releases">https://github.com/jmigartua/tesi-proposamena/releases</a>.</p>
 <p>Everything the app needs is inside it, the mirror of MAGNDATA and the thesis database; it touches no other folder. What you make in it, collections and corrections, goes to your own Library.</p>
 <h2 id="what">What it does</h2>
-<ul><li><b>Every published magnetic structure of MAGNDATA, offline.</b> The 2488 entries of the snapshot, with their symmetry, moments, irreps, papers and remarks, in a window that needs no server and no network.</li><li><b>Collections with counts</b> in the sidebar, as pop-up rows that never scroll: families, experimental methods, the magnetic elements on a periodic table, the entries whose remarks carry a word of doubt, our readings. One click selects only that collection; ⌘-click combines.</li><li><b>The periodic table and the element's card</b>: the magnetic element chosen on the table; a right-click on any element opens its card, the neutron tables (coherent scattering length, the form-factor coefficients of its ions and their curves) and what the snapshot holds for it, with the entries one click away.</li><li><b>The filters drawer</b>: a vertical tab at the right of the table opens a panel of criteria in sections, after the ICSD's search: the elements the formula contains, the number of magnetic sites; year, first author, journal; the ordering and measuring temperatures, the programs and techniques the remarks mention; the parent's crystal system; and, under a rule and in moss, the thesis's own readings. Every criterion is a chip above the table.</li><li><b>Facets and search</b>: parent group, BNS group, irrep direction type, number of irreps, k-maximality; the search understands element symbols (La Mn O), formulas with or without spaces (LaMnO3, lamn), labels, authors and words, and ranks the matches.</li><li><b>The entry's card</b> in the inspector, in two sub-cards: <i>As deposited</i>, MAGNDATA's record (paper and DOI, parent and magnetic group, propagation or modulation vector, temperatures, cell, irreps with role and direction, moments along the crystal axes, the remarks marked when they admit a doubt); and <i>Our readings</i>, in moss, the thesis's layer on that entry (below), as numbered contributions: the structure drawn by us from the file, the form factors of the ions we assume, and what the forward model computed, the uncertainties, the audit within the model, the rotations, the tests, the audit between models (version 1: the colourings of the magnetic cell's family group as candidate models, every commensurate entry, whether the pattern tells the published one from them), and the diffractogram simulated by the forward model, the nuclear profile in graphite and the magnetic in orange.</li><li><b>The diffractogram, at will</b>: <i>Simulate…</i> on the card (⇧⌘P) opens the forward model in a window of its own: the wavelength, the 2θ range, the peak width (constant, or Caglioti's U V W as a refinement program reports them), the moments scaled from zero to twice the published, nuclear or magnetic or both, √I, the strongest lines named by hkl, the profile copied as CSV. The paper's wavelength is offered when the remarks give it or name an instrument; otherwise the model's 2.4 Å. The model is the thesis's version 0, in the window the same recipe as in Python, checked line against line. <i>Beside a candidate model</i> lists the magnetic models the parent's colourings allow (the audit between models) and draws the chosen one's magnetic pattern dashed in moss over the published one, with the distance between the two: the picture of why the pattern tells two models apart, or cannot.</li><li><b>Our readings, per entry</b>: the deposited uncertainties as the GUM reads them, the audit of the published model in the forward model (which of its parameters the powder pattern sees at first order, which only at second order, the weakest seen direction, the weakly seen parameters by name), the rigid rotations of every moment about a, b and c and which of them leave the pattern unchanged, and the result of each test run on the entry against FullProf or the diagnostic. A switch above the card shows either layer or both; a moss dot in the table marks the entries that carry readings; the sidebar selects by them.</li><li><b>One step to the source</b>: the entry at the Bilbao server (⌘↩), the paper by its DOI (⌥⌘↩), from the card, the Entry menu or the right-click menu.</li><li><b>Copy and export</b>: the label (⇧⌘C), the card as text, the filtered list as CSV (⇧⌘E).</li><li><b>Statistics</b>: the collection in numbers, the same figures as the thesis site.</li><li><b>A Mac app in the house style</b>: the title bar the app's own, the system's context menu, light and dark, graphite accent, dividers that drag, the layout and the filters remembered, Settings with panes, What's New, this manual, ideas noted from inside.</li><li><b>The structure drawn from the file</b>: on the card, a still of the magnetic cell with the atoms by element and the moments as orange arrows; <i>Draw the structure</i> (⌘D) opens it in a window of its own, to rotate, zoom, look along a, b or c, show all atoms or the magnetic only, the parent cell dashed where the file gives the transformation, the site labels, the arrows' scale; a click on a site follows its orbit. The atoms are generated from the file's independent sites by the file's own magnetic operations, the moments carried as axial vectors with the time-reversal sign; nothing beyond the file is computed. Incommensurate structures are not drawn yet.</li><li><b>Collections of one's own</b>: a named set of entries kept by hand. <i>Keep…</i> on the card (⇧⌘K) puts the entry in a collection or takes it out; <i>Keep the table as a collection…</i> in the sidebar keeps what the table shows. Each collection is a row of the sidebar's <i>Kept</i> group with its count: a click shows its entries, ⌘-click combines, ✕ deletes, right-click opens its menu (the labels or the entries as CSV copied, rename, the file in Finder, delete). Kept in your Library, in collections.json.</li><li><b>Two entries side by side</b>: <i>Compare…</i> on the card (⌥⌘D) offers the entry selected before and the other entries of the same compound, by temperature; the two open in a window of their own as one table, the entries as columns, every row of the record and of our readings, the differing rows marked (ochre for the record, moss for ours), the structures drawn, <i>only what differs</i> to hide the rest.</li><li><b>The method corrected by hand</b>: the method on the card is the mirror's heuristic reading of the file's comments; <i>correct…</i> beside it offers the eight classes and asks a line of reason. The note is kept in your Library (curation.json), shown at once as "noted here, not yet in the project", and the sidebar's counts follow; <code>magdata/tools/curation_from_app.py</code> brings the notes into the project's curation, after which the class reads "corrected by hand". The mirror's column is never edited.</li></ul>
+<ul><li><b>Every published magnetic structure of MAGNDATA, offline.</b> The 2488 entries of the snapshot, with their symmetry, moments, irreps, papers and remarks, in a window that needs no server and no network.</li><li><b>Collections with counts</b> in the sidebar, as pop-up rows that never scroll: families, experimental methods, the magnetic elements on a periodic table, the entries whose remarks carry a word of doubt, our readings. One click selects only that collection; ⌘-click combines.</li><li><b>The periodic table and the element's card</b>: the magnetic element chosen on the table; a right-click on any element opens its card, the neutron tables (coherent scattering length, the form-factor coefficients of its ions and their curves) and what the snapshot holds for it, with the entries one click away.</li><li><b>The filters drawer</b>: a vertical tab at the right of the table opens a panel of criteria in sections, after the ICSD's search: the elements the formula contains, the number of magnetic sites; year, first author, journal; the ordering and measuring temperatures, the programs and techniques the remarks mention; the parent's crystal system; and, under a rule and in moss, the thesis's own readings. Every criterion is a chip above the table.</li><li><b>Facets and search</b>: parent group, BNS group, irrep direction type, number of irreps, k-maximality; the search understands element symbols (La Mn O), formulas with or without spaces (LaMnO3, lamn), labels, authors and words, and ranks the matches.</li><li><b>The entry's card</b> in the inspector, in two sub-cards: <i>As deposited</i>, MAGNDATA's record (paper and DOI, parent and magnetic group, propagation or modulation vector, temperatures, cell, irreps with role and direction, moments along the crystal axes, the remarks marked when they admit a doubt); and <i>Our readings</i>, in moss, our layer on that entry (below), as numbered contributions: the structure drawn by us from the file, the form factors of the ions we assume, and what the forward model computed, the uncertainties, the audit within the model, the rotations, the tests, the audit between models (version 1: the colourings of the magnetic cell's family group as candidate models, every commensurate entry, whether the pattern tells the published one from them), and the diffractogram simulated by the forward model, the nuclear profile in graphite and the magnetic in orange.</li><li><b>The diffractogram, at will</b>: <i>Simulate…</i> on the card (⇧⌘P) opens the forward model in a window of its own: the wavelength, the 2θ range, the peak width (constant, or Caglioti's U V W as a refinement program reports them), the moments scaled from zero to twice the published, nuclear or magnetic or both, √I, the strongest lines named by hkl, the profile copied as CSV. The paper's wavelength is offered when the remarks give it or name an instrument; otherwise the model's 2.4 Å. The model is the thesis's version 0, in the window the same recipe as in Python, checked line against line. <i>Beside a candidate model</i> lists the magnetic models the parent's colourings allow (the audit between models) and draws the chosen one's magnetic pattern dashed in moss over the published one, with the distance between the two: the picture of why the pattern tells two models apart, or cannot.</li><li><b>Our readings, per entry</b>: the deposited uncertainties as the GUM reads them, the audit of the published model in the forward model (which of its parameters the powder pattern sees at first order, which only at second order, the weakest seen direction, the weakly seen parameters by name), the rigid rotations of every moment about a, b and c and which of them leave the pattern unchanged, and the result of each test run on the entry against FullProf or the diagnostic. A switch above the card shows either layer or both; a moss dot in the table marks the entries that carry readings; the sidebar selects by them.</li><li><b>One step to the source</b>: the entry at the Bilbao server (⌘↩), the paper by its DOI (⌥⌘↩), from the card, the Entry menu or the right-click menu.</li><li><b>Copy and export</b>: the label (⇧⌘C), the card as text, the filtered list as CSV (⇧⌘E).</li><li><b>Statistics</b>: the collection in numbers, the same figures as the thesis site.</li><li><b>A Mac app in the house style</b>: the title bar the app's own, the system's context menu, light and dark, graphite accent, dividers that drag, the layout and the filters remembered, Settings with panes, What's New, this manual, ideas noted from inside.</li><li><b>The structure drawn from the file</b>: on the card, a still of the magnetic cell with the atoms by element and the moments as orange arrows; <i>Draw the structure</i> (⌘D) opens it in a window of its own, to rotate, zoom, look along a, b or c, show all atoms or the magnetic only, the parent cell dashed where the file gives the transformation, the site labels, the arrows' scale; a click on a site follows its orbit. The atoms are generated from the file's independent sites by the file's own magnetic operations, the moments carried as axial vectors with the time-reversal sign; nothing beyond the file is computed. Incommensurate structures are not drawn yet.</li><li><b>Collections of one's own</b>: a named set of entries kept by hand. <i>Keep…</i> on the card (⇧⌘K) puts the entry in a collection or takes it out; <i>Keep the table as a collection…</i> in the sidebar keeps what the table shows. Each collection is a row of the sidebar's <i>Kept</i> group with its count: a click shows its entries, ⌘-click combines, ✕ deletes, right-click opens its menu (the labels or the entries as CSV copied, rename, the file in Finder, delete). Kept in your Library, in collections.json.</li><li><b>Two entries side by side</b>: <i>Compare…</i> on the card (⌥⌘D) offers the entry selected before and the other entries of the same compound, by temperature; the two open in a window of their own as one table, the entries as columns, every row of the record and of our readings, the differing rows marked (ochre for the record, moss for ours), the structures drawn, <i>only what differs</i> to hide the rest.</li><li><b>The method corrected by hand</b>: the method on the card is the mirror's heuristic reading of the file's comments; <i>correct…</i> beside it offers the eight classes and asks a line of reason. The note is kept in your Library (curation.json), shown at once as "noted here, not yet in the project", and the sidebar's counts follow; <code>magdata/tools/curation_from_app.py</code> brings the notes into the project's curation, after which the class reads "corrected by hand". The mirror's column is never edited.</li></ul>
 <h2 id="versions">Versions</h2>
 
 <table class="versions caption-top">
@@ -80,96 +80,101 @@ table.versions { border-collapse: collapse; margin: .5em 0 1em; } table.versions
 <th data-quarto-table-cell-role="th"></th>
 </tr>
 <tr class="even">
+<td class="v">0.20.0</td>
+<td>2026-11-01</td>
+<td>The group corrected; the About without the thesis; the lines table to the right; the element's card from the form factors</td>
+</tr>
+<tr class="odd">
 <td class="v">0.19.0</td>
 <td>2026-11-01</td>
 <td>The landing in the family's look; the name goes home; a fresh start</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.18.0</td>
 <td>2026-11-01</td>
 <td>The audit between models over every commensurate entry, domains apart; the landing; the group</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.17.0</td>
 <td>2026-11-01</td>
 <td>The instrument's resolution, Caglioti's</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.16.0</td>
 <td>2026-11-01</td>
 <td>A candidate model beside the published one, on the diffractogram</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.15.0</td>
 <td>2026-11-01</td>
 <td>The diffractogram, simulated at will</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.14.0</td>
 <td>2026-11-01</td>
 <td>Our readings as numbered contributions; the audit between models</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.13.0</td>
 <td>2026-11-01</td>
 <td>About, with air; the drawings as ours; a page on the site</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.12.0</td>
 <td>2026-11-01</td>
 <td>The method class corrected by hand</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.11.0</td>
 <td>2026-11-01</td>
 <td>Two entries side by side</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.10.0</td>
 <td>2026-11-01</td>
 <td>Collections of one's own</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.9.0</td>
 <td>2026-11-01</td>
 <td>⟨j₂⟩ beside ⟨j₀⟩; the ion of every moment</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.8.0</td>
 <td>2026-11-01</td>
 <td>The structure drawn from the file</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.7.0</td>
 <td>2026-11-01</td>
 <td>An icon of its own; who makes it; the snapshot named</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.6.0</td>
 <td>2026-11-01</td>
 <td>Orange on the periodic table; every author; the help panels as windows</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.5.0</td>
 <td>2026-11-01</td>
 <td>The card as a window; the periodic table in the sidebar</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.4.0</td>
 <td>2026-11-01</td>
 <td>The sidebar without scrolling; the periodic table; the filters drawer</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.3.0</td>
 <td>2026-11-01</td>
 <td>Our readings on every card; the smarter search; the audit and GUM charts</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="v">0.2.0</td>
 <td>2026-10-31</td>
 <td>The store, read directly; the questions; ask</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="v">0.1.0</td>
 <td>2026-10-31</td>
 <td>The window</td>
@@ -178,6 +183,10 @@ table.versions { border-collapse: collapse; margin: .5em 0 1em; } table.versions
 </table>
 
 <h2 id="notes">Release notes</h2>
+<h3 id="v0-20-0">0.20.0 · The group corrected; the About without the thesis; the lines table to the right; the element's card from the form factors <span class="m">2026-11-01</span></h3>
+<p>Josu's corrections of 1 November: Leire Usategui is no longer a member of the group, Mireia Sainz-Menchón and Jon Gabirondo López are doctors, Irati Tolosa Lecea is a PhD candidate; the About window drops its references to the thesis, the co-supervisors' label among them; the diffractogram window's table of lines can sit to the right of the chart, with buttons to arrange the panels; and the form factors on the card open the element's card again, large, in a window of its own.</p>
+<p class="k">Added</p><ul><li>"The diffractogram window: \"lines below\", \"to the right\", \"hidden\" arrange the table of the strongest lines; remembered in the settings; the chart redraws to the space it gets."</li><li>"The tips on hover (Josu's image: two tooltips at once, ours and the WebView's, and the tip covering the menu it explained): the control's title moves to our own tip on first hover, so the WebView never shows its second one; a press anywhere hides the tip at once; it waits 0.7 s; ⌥⌘T switches the tips on and off (View ▸ Explain Controls on Hover; Settings ▸ Chrome), and every tip says so."</li><li>"The form factors block on the entry's card: one button per element (\"Fe's card\") opening the element's card in a window of its own, with the form factors large, the coefficients, the scattering lengths and the ions."</li></ul>
+<p class="k">Changed</p><ul><li>"The group, as Josu corrected it: Leire Usategui out; Mireia Sainz-Menchón and Jon Gabirondo López as doctors; Irati Tolosa Lecea, PhD candidate; the About and the start page say \"corrected 2026-11-01\" beside the staff page's date."</li><li>"The About: Ispilu is the working face of a question, not of a thesis proposal; the authors without the co-supervisors' label; the drawings, readings and charts \"ours\". The start page says \"our readings\" the same way."</li></ul>
 <h3 id="v0-19-0">0.19.0 · The landing in the family's look; the name goes home; a fresh start <span class="m">2026-11-01</span></h3>
 <p>Josu, on 0.18.0's landing: not so crowded with text, the content kept, the aspect of the website with the family design kit; a way back to the landing from the background; the name at the top left, with the icon, going to the landing; and a button to reset the last selection and start fresh.</p>
 <p class="k">Added</p><ul><li>"The name and the icon at the top left are a button to the start page; the views other than the table carry a crumb, \"‹ The start\" and \"The list\"; the sidebar's row stays."</li><li>"Start fresh (the arrow in the toolbar, and on the start page): nothing selected, no filter, no search, the drawer closed, the sort by label; the collections and the corrections are kept."</li></ul>
