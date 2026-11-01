@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta name="robots" content="noindex, nofollow">
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ispilu, the MAGNDATA mirror as a Mac app – The square</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html-afe927e19676d0e50b1726048be49fb1.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<style>html{ scroll-behavior: smooth; }</style>
+<meta name="color-scheme" content="light dark">
+<link rel="alternate" type="application/atom+xml" title="The square" href="../feed.xml">
+
+
+<link rel="stylesheet" href="../assets/styles/fonts.css">
+<link rel="stylesheet" href="../assets/styles/desk.css">
+</head>
+
+<body>
+
+<header class="site-head">
+  <a href="../" class="wordmark">The square</a>
+</header>
+
+<header id="title-block-header">
+<h1 class="title">Ispilu, the MAGNDATA mirror as a Mac app</h1>
+
+</header>
+
+
+<div class="dateline"><span>en</span></div>
+<style>
+.dl { font-weight: 600; } .m { color: #6e6e73; font-size: .92em; } .k { font-weight: 600; margin: 1em 0 .2em; }
+table.versions { border-collapse: collapse; margin: .5em 0 1em; } table.versions td, table.versions th { text-align: left; padding: .15em 1.2em .15em 0; border-bottom: 1px solid #e5e5e5; font-size: .95em; } table.versions td.v { font-family: ui-monospace, Menlo, monospace; }
+</style>
+<p class="lede">Ispilu, "mirror" in Basque, is made by Irene Urcelay-Olabarria and Josu M. Igartua, Thermomat Research Group, University of the Basque Country (EHU), as the working face of a doctoral thesis proposal: which features of a magnetic structure a powder neutron pattern determines, which it does not, and what cuts the rest. The MAGNDATA mirror as a Mac app: the published magnetic structures, browsed and inspected on this Mac, without a server and without the network. The data is the mirror's snapshot of the Bilbao Crystallographic Server's repository, named in the status bar.</p>
+<h2 id="download">Download</h2>
+<p><a class="dl" href="https://github.com/jmigartua/tesi-proposamena/releases/download/v0.13.0/Ispilu-0.13.0.zip">Ispilu 0.13.0 for the Mac</a> <span class="m">· zip, unsigned · the first time, right-click the app and choose Open</span></p>
+<p class="m">The download is a release of a private repository: it asks for a GitHub account that has been given access. All releases: <a href="https://github.com/jmigartua/tesi-proposamena/releases">https://github.com/jmigartua/tesi-proposamena/releases</a>.</p>
+<p>Everything the app needs is inside it, the mirror of MAGNDATA and the thesis database; it touches no other folder. What you make in it, collections and corrections, goes to your own Library.</p>
+<h2 id="what">What it does</h2>
+<ul><li><b>Every published magnetic structure of MAGNDATA, offline.</b> The 2488 entries of the snapshot, with their symmetry, moments, irreps, papers and remarks, in a window that needs no server and no network.</li><li><b>Collections with counts</b> in the sidebar, as pop-up rows that never scroll: families, experimental methods, the magnetic elements on a periodic table, the entries whose remarks carry a word of doubt, our readings. One click selects only that collection; ⌘-click combines.</li><li><b>The periodic table and the element's card</b>: the magnetic element chosen on the table; a right-click on any element opens its card, the neutron tables (coherent scattering length, the form-factor coefficients of its ions and their curves) and what the snapshot holds for it, with the entries one click away.</li><li><b>The filters drawer</b>: a vertical tab at the right of the table opens a panel of criteria in sections, after the ICSD's search: the elements the formula contains, the number of magnetic sites; year, first author, journal; the ordering and measuring temperatures, the programs and techniques the remarks mention; the parent's crystal system; and, under a rule and in moss, the thesis's own readings. Every criterion is a chip above the table.</li><li><b>Facets and search</b>: parent group, BNS group, irrep direction type, number of irreps, k-maximality; the search understands element symbols (La Mn O), formulas with or without spaces (LaMnO3, lamn), labels, authors and words, and ranks the matches.</li><li><b>The entry's card</b> in the inspector, in two sub-cards: <i>As deposited</i>, MAGNDATA's record (paper and DOI, parent and magnetic group, propagation or modulation vector, temperatures, cell, irreps with role and direction, moments along the crystal axes, the remarks marked when they admit a doubt); and <i>Our readings</i>, in moss, the thesis's layer on that entry (below): the structure drawn by us from the file, the form factors of the ions we assume, and what the forward model computed.</li><li><b>Our readings, per entry</b>: the deposited uncertainties as the GUM reads them, the audit of the published model in the forward model (which of its parameters the powder pattern sees at first order, which only at second order, the weakest seen direction, the weakly seen parameters by name), the rigid rotations of every moment about a, b and c and which of them leave the pattern unchanged, and the result of each test run on the entry against FullProf or the diagnostic. A switch above the card shows either layer or both; a moss dot in the table marks the entries that carry readings; the sidebar selects by them.</li><li><b>One step to the source</b>: the entry at the Bilbao server (⌘↩), the paper by its DOI (⌥⌘↩), from the card, the Entry menu or the right-click menu.</li><li><b>Copy and export</b>: the label (⇧⌘C), the card as text, the filtered list as CSV (⇧⌘E).</li><li><b>Statistics</b>: the collection in numbers, the same figures as the thesis site.</li><li><b>A Mac app in the house style</b>: the title bar the app's own, the system's context menu, light and dark, graphite accent, dividers that drag, the layout and the filters remembered, Settings with panes, What's New, this manual, ideas noted from inside.</li><li><b>The structure drawn from the file</b>: on the card, a still of the magnetic cell with the atoms by element and the moments as orange arrows; <i>Draw the structure</i> (⌘D) opens it in a window of its own, to rotate, zoom, look along a, b or c, show all atoms or the magnetic only, the parent cell dashed where the file gives the transformation, the site labels, the arrows' scale; a click on a site follows its orbit. The atoms are generated from the file's independent sites by the file's own magnetic operations, the moments carried as axial vectors with the time-reversal sign; nothing beyond the file is computed. Incommensurate structures are not drawn yet.</li><li><b>Collections of one's own</b>: a named set of entries kept by hand. <i>Keep…</i> on the card (⇧⌘K) puts the entry in a collection or takes it out; <i>Keep the table as a collection…</i> in the sidebar keeps what the table shows. Each collection is a row of the sidebar's <i>Kept</i> group with its count: a click shows its entries, ⌘-click combines, ✕ deletes, right-click opens its menu (the labels or the entries as CSV copied, rename, the file in Finder, delete). Kept in your Library, in collections.json.</li><li><b>Two entries side by side</b>: <i>Compare…</i> on the card (⌥⌘D) offers the entry selected before and the other entries of the same compound, by temperature; the two open in a window of their own as one table, the entries as columns, every row of the record and of our readings, the differing rows marked (ochre for the record, moss for ours), the structures drawn, <i>only what differs</i> to hide the rest.</li><li><b>The method corrected by hand</b>: the method on the card is the mirror's heuristic reading of the file's comments; <i>correct…</i> beside it offers the eight classes and asks a line of reason. The note is kept in your Library (curation.json), shown at once as "noted here, not yet in the project", and the sidebar's counts follow; <code>magdata/tools/curation_from_app.py</code> brings the notes into the project's curation, after which the class reads "corrected by hand". The mirror's column is never edited.</li></ul>
+<h2 id="versions">Versions</h2>
+
+<table class="versions caption-top">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">version</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+<tr class="even">
+<td class="v">0.13.0</td>
+<td>2026-11-01</td>
+<td>About, with air; the drawings as ours; a page on the site</td>
+</tr>
+<tr class="odd">
+<td class="v">0.12.0</td>
+<td>2026-11-01</td>
+<td>The method class corrected by hand</td>
+</tr>
+<tr class="even">
+<td class="v">0.11.0</td>
+<td>2026-11-01</td>
+<td>Two entries side by side</td>
+</tr>
+<tr class="odd">
+<td class="v">0.10.0</td>
+<td>2026-11-01</td>
+<td>Collections of one's own</td>
+</tr>
+<tr class="even">
+<td class="v">0.9.0</td>
+<td>2026-11-01</td>
+<td>⟨j₂⟩ beside ⟨j₀⟩; the ion of every moment</td>
+</tr>
+<tr class="odd">
+<td class="v">0.8.0</td>
+<td>2026-11-01</td>
+<td>The structure drawn from the file</td>
+</tr>
+<tr class="even">
+<td class="v">0.7.0</td>
+<td>2026-11-01</td>
+<td>An icon of its own; who makes it; the snapshot named</td>
+</tr>
+<tr class="odd">
+<td class="v">0.6.0</td>
+<td>2026-11-01</td>
+<td>Orange on the periodic table; every author; the help panels as windows</td>
+</tr>
+<tr class="even">
+<td class="v">0.5.0</td>
+<td>2026-11-01</td>
+<td>The card as a window; the periodic table in the sidebar</td>
+</tr>
+<tr class="odd">
+<td class="v">0.4.0</td>
+<td>2026-11-01</td>
+<td>The sidebar without scrolling; the periodic table; the filters drawer</td>
+</tr>
+<tr class="even">
+<td class="v">0.3.0</td>
+<td>2026-11-01</td>
+<td>Our readings on every card; the smarter search; the audit and GUM charts</td>
+</tr>
+<tr class="odd">
+<td class="v">0.2.0</td>
+<td>2026-10-31</td>
+<td>The store, read directly; the questions; ask</td>
+</tr>
+<tr class="even">
+<td class="v">0.1.0</td>
+<td>2026-10-31</td>
+<td>The window</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="notes">Release notes</h2>
+<h3 id="v0-13-0">0.13.0 · About, with air; the drawings as ours; a page on the site <span class="m">2026-11-01</span></h3>
+<p>Josu, on 0.12.0: the About panel should breathe and appeal, say EHU alone, and link the group; the drawings and charts are ours and should appear as such on the card; and the app should have a page on his site with the description, the release notes, the versions and the download, to share with Irene.</p>
+<p class="k">Added</p><ul><li>About Ispilu as a window of the app's own (Ispilu ▸ About Ispilu), with the icon, the version, the thesis's question, the two names, the Thermomat Research Group with its link, EHU, MAGNDATA with its link and its authors, the tables, the snapshot, the copyright.</li><li>"The app's page on the site, generated from the release notes by tools/site-page.py into the square as an unlisted text: the description, the download of the current version (a release of the private repository), what it does, the versions, every release's notes; refreshed with each release by the same tool and the square's go."</li><li>npm run copy makes the zip for a release; the release itself holds it (GitHub, private repository, v&lt;version&gt;).</li></ul>
+<p class="k">Changed</p><ul><li>"The structure drawn and the form factors of the assumed ions moved from \"As deposited\" to \"Our readings\", under their own heads, \"drawn by us from the file\" and \"the ions we assume\"; what we computed follows under \"Computed (the forward model, v0)\". The ion column stays in the deposited moments table."</li><li>EHU alone, not UPV/EHU, everywhere the app names the university.</li></ul>
+<p class="k">Known</p><ul><li>The download asks for a GitHub account with access to the private repository until the publication is decided (D8, D18).</li></ul>
+<h3 id="v0-12-0">0.12.0 · The method class corrected by hand <span class="m">2026-11-01</span></h3>
+<p>The fifth of the next steps (idea 4). The experimental method of an entry is the ingest's heuristic over the file's comments; where it reads wrong, correct… beside it on the card notes the class by hand, with a line of reason. The note is kept in a file of the user's, shown at once and marked; the project's tool brings it into the curation layer, from which the store and the site carry it, marked "corrected by hand". The mirror's own column is never edited.</p>
+<p class="k">Added</p><ul><li>"correct… beside the method on the card: a menu of the eight classes with the current one checked, a line of reason asked; \"noted here, not yet in the project\" on the card until the correction reaches the curation; \"Withdraw the note\" in the menu; the sidebar's method counts follow at once."</li><li>The corrections kept in ~/Library/Application Support/Ispilu/curation.json (curation_read, curation_write); magdata/tools/curation_from_app.py brings them into curation/methods.yml; derive.py applies them as d_entry.method_curated; the export and the store read the corrected class (m) beside the heuristic's (mh) with a mark (mc).</li></ul>
+<p class="k">Known</p><ul><li>The round trip needs the tool run and the data rebuilt (ecosystem/tools/build.py) for the correction to reach the site and the next bundle; until then the app shows it from its own file.</li></ul>
+<h3 id="v0-11-0">0.11.0 · Two entries side by side <span class="m">2026-11-01</span></h3>
+<p>The fourth of the next steps (idea 5). Compare… on the card offers the entry selected before and the other entries of the same compound, by temperature; the two open side by side in a window of their own, one table with the entries as columns, every row of the record and of our readings, the rows that differ marked, the two structures drawn.</p>
+<p class="k">Added</p><ul><li>"Compare… on the card (Entry ▸ Compare With…, ⌥⌘D): a menu with the entry selected before and the other entries of the same compound, each with its measuring temperature and magnetic group."</li><li>"The comparison window (compare.html, open_compare): compound, family, paper, parent, magnetic group, k, irreps, method, temperatures, cell, atoms, moments per site, the structures drawn, remarks, the file; then our readings, uncertainties, audit, rotations, tests. A differing row is marked in ochre (the record) or moss (ours); \"only what differs\" hides the rest; the count of differing rows in the bar."</li></ul>
+<p class="k">Changed</p><ul><li>The card's action row wraps when the inspector is narrow (four buttons since 0.10.0, five now).</li></ul>
+<p class="k">Known</p><ul><li>Two entries of different compounds compare as well; the structures are drawn, never marked as differing.</li></ul>
+<h3 id="v0-10-0">0.10.0 · Collections of one's own <span class="m">2026-11-01</span></h3>
+<p>The third of the next steps (idea 3). A collection is a named set of entries kept by hand - the group's cases, the audit's set, the entries of a paper - with a name, a number, a place in the sidebar, a ✕ and a right-click menu, as the conventions ask of anything the hand makes. Kept in a file of the user's, exported as a list of labels or as CSV.</p>
+<p class="k">Added</p><ul><li>"The sidebar's Kept group: each collection a row with its count; click shows its entries (and combines with the other groups as ever); ✕ on hover deletes it after a question; right-click opens its menu: Show its entries, Copy the labels, Copy its entries as CSV, Rename, Show the file in Finder, Delete."</li><li>"\"Keep the table as a collection…\" / \"New collection from the table…\" at the group's end: the entries the table shows now, under a name asked for."</li><li>"Keep… on the card (Entry ▸ Keep in a Collection…, ⇧⌘K): a menu of the collections with a check mark on those holding the entry, a click toggles; New collection with this entry… at its end. The button reads Keep ✓ when the entry is kept somewhere."</li><li>A chip for a kept collection in the selection; Clear All Filters releases it.</li><li>The collections kept whole in ~/Library/Application Support/Ispilu/collections.json (JSON, version 1, one list); the browser face keeps them in localStorage.</li></ul>
+<p class="k">Known</p><ul><li>The names are asked for with the system's prompt sheet; a sheet of the app's own is for later.</li><li>A collection is not shared between Macs by itself; the file can be copied.</li></ul>
+<h3 id="v0-9-0">0.9.0 · ⟨j₂⟩ beside ⟨j₀⟩; the ion of every moment <span class="m">2026-11-01</span></h3>
+<p>The second of the next steps (idea 10). The element's card draws ⟨j₂⟩ dashed beside ⟨j₀⟩ for each ion and lists both sets of coefficients; the entry's card names the ion each moment stands on, by the forward model's rule, and draws the form factors of those ions. The tables now carry the model's default ions.</p>
+<p class="k">Added</p><ul><li>⟨j₂⟩(s), with its factor s², dashed beside ⟨j₀⟩ on the element's card, in the hover readout and in the coefficients table; a line saying which ion the forward model takes for the element.</li><li>"On the entry's card, an ion column in the Moments table: the file gives no charge, so the forward model's default ion for the element (Mn+3, Fe+3, Co+2, Ni+2, …), or the nearest charge the tables have; below, the form factors of those ions, ⟨j₀⟩ solid and ⟨j₂⟩ dashed, with the note that v0 uses ⟨j₀⟩ in the dipole approximation."</li><li>The neutron tables regenerated with the default ions and the fallback order of the model (tools/export_tables.py, reference/neutron_tables.json, the markdown with ⟨j₂⟩).</li></ul>
+<p class="k">Known</p><ul><li>A charge written in the file (type_symbol with a sign) is not read yet; every ion is the model's assumption, said so on the card.</li><li>The structure is drawn for commensurate entries only (0.8.0).</li></ul>
+<h3 id="v0-8-0">0.8.0 · The structure drawn from the file <span class="m">2026-11-01</span></h3>
+<p>The first of the next steps (idea 1, the site's I9): the magnetic structure drawn from the mcif, in the card as a still and in a window of its own, interactive. The atoms of the magnetic cell generated from the file's independent sites by the file's own magnetic operations and centrings, the moments carried as axial vectors with the time-reversal sign, the magnetic cell framed and the parent cell dashed where the file gives the transformation. Nothing of magnetism computed beyond what the file states.</p>
+<p class="k">Added</p><ul><li>"A Structure section on the card: a still of the structure (atoms as discs by element, moments as orange arrows, the cells), its legend, the count of atoms and moments; the button Draw the structure (Entry ▸ Draw the Structure, ⌘D)."</li><li>"The structure's window (structure.html, open_structure), one per entry: drag rotates, scroll zooms, views along a, b, c or oblique; all atoms or the magnetic only, the moments, the magnetic cell, the parent cell, the site labels; the arrows' scale in Å per μB; a click on a site follows its orbit and reads its moment."</li><li>The drawing is pure JavaScript over SVG (structure.js), the rows read from the store by the app; the browser face carries a set of eight entries for the battery.</li></ul>
+<p class="k">Known</p><ul><li>Incommensurate structures are not drawn yet; the Fourier terms wait for a later release.</li><li>An irrep's pattern highlighted (I9's last clause) needs the mode decomposition per site, which the file does not carry; later.</li><li>The parent cell is drawn from the child transformation without its origin shift, from the magnetic cell's origin.</li></ul>
+<h3 id="v0-7-0">0.7.0 · An icon of its own; who makes it; the snapshot named <span class="m">2026-11-01</span></h3>
+<p>Josu, 1 November: the icon was still an earlier app's; the About panel was bare; it should say somewhere that Irene and he are working on this, and name the Thermomat Research Group; and what is the date in the status bar. Ispilu now has its own icon, a magnetic moment and its image in the mirror in the kit's orange on paper; the About panel names the two authors, the group, the thesis's question, MAGNDATA and its authors, the tables; the manual and the README open with the same line; the status bar says what its date is.</p>
+<p class="k">Added</p><ul><li>The icon (app/design/icon.svg, rasterised to design/icon.png, the set generated by tauri icon).</li><li>The About panel with the authors, the copyright line, the credits and the link to MAGNDATA at the Bilbao server.</li><li>The first line of the manual and of the README name the authors and the group.</li></ul>
+<p class="k">Changed</p><ul><li>"The status bar reads \"MAGNDATA snapshot 2026-10-25\", with a tooltip: the date is the server's export, the day of the mirror's snapshot, not of the build; \"the store\" or \"bundled export\" says where the list came from."</li></ul>
+<p class="k">Known</p><ul><li>The structure is still not drawn (idea I9).</li></ul>
+<h3 id="v0-6-0">0.6.0 · Orange on the periodic table; every author; the help panels as windows <span class="m">2026-11-01</span></h3>
+<p>Josu's note on 0.5.0: the chosen element went nearly blank in the light theme. The periodic table now marks the chosen cell and the cell under the mouse in the kit's orange, light and dark. The export carries every author of each paper, so the search and the drawer's author field find co-authors, and the card names them. What's New, the manual, the shortcuts and the ideas open as windows of their own, like the element's card.</p>
+<p class="k">Added</p><ul><li>Every author of the paper in the export (aa) and read from the store; the search matches any of them; the drawer's author field, "Author (any of the paper's)", completes from all of them; the card's Paper line names up to six and counts the rest.</li><li>What's New, the manual, the keyboard shortcuts and the ideas as windows of their own (panel.html, open_panel), one of each, resizable, ⌘W closes; ideas are noted from the window as before. The browser face keeps the dialogs.</li></ul>
+<p class="k">Changed</p><ul><li>The periodic table's chosen cell in the kit's orange (#c2410c light, #fb923c dark) with the cell under the mouse in its wash, in the sidebar's small table, the large one and the drawer; the graphite stays the selection colour everywhere else.</li></ul>
+<p class="k">Known</p><ul><li>The structure is still not drawn (idea I9).</li></ul>
+<h3 id="v0-5-0">0.5.0 · The card as a window; the periodic table in the sidebar <span class="m">2026-11-01</span></h3>
+<p>Two more of Josu's proposals of the morning. The element's card is a window of its own in the app, as many as wanted, movable and resizable like any window, its buttons reaching the main window. The periodic table lives small in the sidebar, every element a cell, and grows under the mouse into the table that selects.</p>
+<p class="k">Added</p><ul><li>The element's card opens in a window of its own (one per element, brought forward if open; ⌘W closes), with the title bar the app's; "As magnetic", "In the formula" and the compounds act on the main window and bring it forward. The card's rendering shared by the window and the browser face's dialog (ui/card.js); the browser face's dialog has an "Open in a window" button.</li><li>The periodic table small in the sidebar in place of the magnetic elements' pop-up row - lit cells for the elements with entries within the selection, the chosen ones in the accent; a click on a cell acts at once; a hover of a third of a second opens the large table beside it, which closes as the mouse leaves; the selection named under the small table.</li></ul>
+<p class="k">Changed</p><ul><li>The sidebar's pop-up rows are three (families, methods, our readings); the elements are the small table.</li></ul>
+<p class="k">Known</p><ul><li>What's New, the manual, the shortcuts and the ideas are still dialogs inside the main window; windows of their own are a later release.</li><li>The structure is still not drawn (idea I9).</li></ul>
+<h3 id="v0-4-0">0.4.0 · The sidebar without scrolling; the periodic table; the filters drawer <span class="m">2026-11-01</span></h3>
+<p>Three proposals of Josu's of this morning. The sidebar's groups are pop-up rows that open a menu, so the sidebar fits the window; a click selects only that item in whichever group, ⌘-click adds to the selection. The magnetic elements are chosen on a periodic table, and a right-click on an element opens its card: the neutron tables (scattering length, form-factor ions and their curves) and what the snapshot holds for it. A vertical tab at the right of the table opens a drawer of criteria in sections, after the ICSD's search: chemistry, bibliography, experiment, symmetry, and under a rule, in moss, the thesis's own readings.</p>
+<p class="k">Added</p><ul><li>The sidebar as pop-up rows (families, methods, magnetic elements, our readings) with the selection named on the row; the menu lists every value with its count within the selection and a check mark; ⌘-click in the menu keeps it open for the next addition.</li><li>The periodic table (ui/periodic.js), as the magnetic elements' popover in the sidebar and as the "formula contains" field in the drawer; a cell with no entry is dimmed; the counts within the selection on the cells.</li><li>The element's card, by right-click on any cell - number, name, Sears's coherent scattering length, Brown's &lt;j0&gt; coefficients for each ion of the element with their curves against sin θ/λ (hover reads the values); in the snapshot, the entries that contain it and those that carry it as the magnetic element, the ordering temperatures, the moments, the years, the families, the methods, the parents, the symmetry forms of its moments, the compounds (a click searches); two buttons select those entries.</li><li>"The drawer (View ▸ Show/Hide Filters, ⌥⌘F, or the vertical tab): the formula contains (all of), the number of magnetic sites; year, first author (with completion), journal; ordering and measuring temperature ranges, programs and techniques the remarks mention (any of, read from the text); the parent's crystal system; and ours - the audit's verdicts, the invisible rotation axes, the weakest seen direction below a value, the median relative esd above a value, the tests run. Every criterion is a chip above the table; the tab carries the count of active criteria; the panel's state is remembered."</li><li>The neutron tables of magdata/reference bundled as data/neutron.json by tools/sync-data.py.</li></ul>
+<p class="k">Fixed</p><ul><li>"The combined selection: a plain click on a row of another group added to the selection instead of replacing it (the groups combined as and); now a click selects only this, in any group, and ⌘-click combines. The remarks' row and our readings follow the same rule."</li><li>A click on "All entries" left the selection without its audit list and the window stopped filtering.</li></ul>
+<p class="k">Known</p><ul><li>The program used is read from the remarks' free text; MAGNDATA's files carry no refinement-software tag, so the field finds the few dozen entries whose remarks name one.</li><li>The first author only, in the author field; the full author lists are in the store (the Ask view) and not yet in the export.</li><li>The form-factor table has &lt;j0&gt; only; &lt;j2&gt;, needed for the orbital part, is for a later release.</li><li>The structure is still not drawn (idea I9).</li></ul>
+<h3 id="v0-3-0">0.3.0 · Our readings on every card; the smarter search; the audit and GUM charts <span class="m">2026-11-01</span></h3>
+<p>Every entry now carries, beside MAGNDATA's record, the thesis's own readings of it, computed in the forward model and kept in a second database beside the mirror: the uncertainties as the GUM reads them, the audit of the published model, the rigid rotations the powder pattern cannot see, and the tests against FullProf and the diagnostic where they were run. The card shows them as a second sub-card in a colour of their own, moss, with a switch between the record as deposited and ours. The search understands elements and formulas; the sidebar selects by our readings too; the Questions view has the charts of all of it.</p>
+<p class="k">Added</p><ul><li>The card in two sub-cards with a switch, Deposited · Ours · Both. "As deposited" is MAGNDATA's record; "Our readings" is the thesis's layer, in moss, used for nothing else, with a left rule; a link at its head opens the charts.</li><li>Our readings per entry, read from thesis.sqlite bundled beside the store - the number of moments with a deposited esd and the median relative esd; the audit (free parameters, seen at first order, at second order only, never; the weakest seen direction; the weakly seen parameters by name); the rigid rotations of 90° about a, b and c and which leave the pattern unchanged; each test's result in a line.</li><li>The sidebar's "Our readings" group selects by them (a weakly seen parameter, an invisible rotation, a sloppy model, no uncertainty deposited, tested against FullProf or the diagnostic), combinable with the other groups; a moss dot beside the label in the table marks an entry that carries readings.</li><li>The search understands element symbols (La Mn O finds the lanthanum manganites, not "polarized"), formulas written without spaces (lamn), labels, authors and words, ranks the matches and explains an empty result; the chips show the active selection and remove its parts.</li><li>The Ispilu number beside the MAGNDATA label on the card and in the table (#1 for 0.1), the same in the site's browser; a biunivocal numbering of the snapshot.</li><li>The Questions view carries the new groups - the GUM (Q90-Q94, who reports uncertainties and since when, by crystal system and direction) and the audit (Q76-Q7G, the percentages of L029 and L030 as charts and maps, the sloppiness buckets, the second-order parameters by stratum, the invisible rotations by crystal system and as a distribution, the tests of the forward model and the diagnostic).</li><li>Light theme - the ochre lighter, the scrollbars pale and thin; the chart colours of the site in the Questions view.</li><li>The window opens a given entry from its URL (sel=label), for the verification battery.</li></ul>
+<p class="k">Changed</p><ul><li>npm run install:app quits the running app before copying the bundle and relaunches it; until now a running Ispilu stayed on the old build after an install.</li></ul>
+<p class="k">Known</p><ul><li>The tests are on 16 entries (five against FullProf, twelve of the diagnostic set); the audit and the rotations on the 1887 powder-determined commensurate entries the forward model could compute; the rest of the card says "nothing computed for this entry yet".</li><li>The structure is still not drawn (idea I9).</li></ul>
+<h3 id="v0-2-0">0.2.0 · The store, read directly; the questions; ask <span class="m">2026-10-31</span></h3>
+<p>The app now opens the mirror's SQLite store itself, read-only, with the same helpers the questions use, so that a question runs identically on the site and in the window. The Questions view shows the catalogue with its charts, the field in motion included; the Ask view is a live SQL console over the store with every saved question one click away.</p>
+<p class="k">Added</p><ul><li>The store opened read-only from Rust (rusqlite, immutable), found in the project in development and bundled inside the app otherwise; the table's list comes from it, the bundled export is the fallback; the status bar says which.</li><li>"View ▸ The Table (⌘1), The Questions (⌘2), Ask the Store (⌘3); the same rows in the sidebar's Views."</li><li>The Questions view, the catalogue of questions.yml with the charts of the last site build and the Rosling chart live.</li><li>The Ask view, a SQL console, SELECT only, two thousand rows at most, timing, Copy CSV; the saved questions in a pop-up with their why.</li><li>median, quartile1, quartile3 and REGEXP available in the app's SQL as in magdb/ask.py.</li><li>Combined selections in the sidebar: ⌘-click adds a row, groups combine as and, the counts are recomputed within the selection (faceted navigation); the chips show the path.</li><li>The State of the Art view (⌘3), the state of the art of the field read from the data, its references opening the questions in the app; Ask moves to ⌘4.</li></ul>
+<p class="k">Known</p><ul><li>The charts of the Questions view are those of the last site build; the Ask view's tables are live. A chart engine in the window is for a later release.</li><li>The structure is still not drawn (idea I9).</li></ul>
+<h3 id="v0-1-0">0.1.0 · The window <span class="m">2026-10-31</span></h3>
+<p>The first face of the mirror as a Mac app, on the same data as the site's browser page. The window with a source-list sidebar of collections, the table of the 2488 entries, the inspector with the entry's card, the status bar, the menu bar, Settings, What's New, the manual, ideas.</p>
+<p class="k">Added</p><ul><li>A unified toolbar in the title bar (sidebar, search, inspector, appearance, help, settings); the title bar owned by the app, its double-click set in Settings (APP_CONVENTIONS §2).</li><li>The sidebar's and the inspector's edges drag within limits and double-click to hide; widths remembered; Window ▸ Reset Layout.</li><li>Help ▸ What Ispilu Does opens the manual at its Features section; the compound name of every entry, from the server's listing, shown where the file gives no formula.</li><li>The sidebar as a source list, with the families, the methods, the magnetic elements and the remarks as collections with counts; one click filters, a second clears.</li><li>The table of entries with sort, the facets (parent group, BNS group, irrep direction, number of irreps, k-maximal) and the search over formula, label, author, remarks and irreps.</li><li>The inspector with the entry's card, the paper and its DOI, the symmetry, k, the temperatures, the cell, the irreps, the moments and the remarks; the system's context menu on it with Open at the Bilbao Server and Copy the Label at its top.</li><li>The Entry menu with Open at the Bilbao Server (⌘↩), Open the Paper (⌥⌘↩), Copy the Label (⇧⌘C), Copy the Card as Text, Previous and Next (⌘↑ ⌘↓).</li><li>The Statistics view (the overview of the collection, the site's same numbers), reached from the sidebar.</li><li>Export the List as CSV (⇧⌘E) copies the filtered list to the clipboard as CSV.</li><li>Settings (⌘,) with General (title bar, remembered filters), Appearance (light, dark, automatic; density), Data (the snapshot, the files) and Advanced (the window's log, Reset).</li><li>What's New, the manual, the keyboard shortcuts and Ideas for the App, from Help and the toolbar.</li><li>The window reports what it sees of itself to app/window.log (sizes at start, errors after).</li></ul>
+<p class="k">Known</p><ul><li>The data is bundled at build time from the site's export; a change in the store needs a rebuild of the app. A later release reads the SQLite store directly.</li><li>No drawing of the structure yet (idea I9).</li><li>The icon is an earlier app's for the moment.</li></ul>
+<p class="m">Irene Urcelay-Olabarria and Josu M. Igartua, <a href="https://thermomat.ehu.eus/">Thermomat Research Group</a>, EHU. The data is <a href="https://www.cryst.ehu.eus/magndata/">MAGNDATA</a>, the Bilbao Crystallographic Server's repository of published magnetic structures.</p>
+
+<div class="end"><span>created 1 nov 2026</span><a href="../" class="">back to the square</a></div>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+    tabsets.forEach(function(tabset) {
+      const tabby = new Tabby('#' + tabset.id);
+    });
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/jmigartua\.github\.io\/square");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
